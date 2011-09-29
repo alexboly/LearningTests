@@ -256,9 +256,9 @@ namespace LearningTests
         {
             const string s = "goosfraba";
 
-            bool endsWithA = s.EndsWith("a");
+            bool endsWithaba = s.EndsWith("aba");
 
-            Assert.IsTrue(endsWithA);
+            Assert.IsTrue(endsWithaba);
         }
 
     }
