@@ -304,12 +304,23 @@ namespace LearningTests
         }
 
         [Test]
-        public void EqualsWithSimilarIgnoreCase()
+        public void EqualsWithSimilarCurrentCultureIgnoreCase()
         {
             const string s = "goosfraba";
             const string another = "gOOsfrABa";
 
             bool equalsWithSimilar = s.Equals(another, StringComparison.CurrentCultureIgnoreCase);
+
+            Assert.IsTrue(equalsWithSimilar);
+        }
+
+        [Test]
+        public void EqualsWithSimilarInvariantCultureIgnoreCase()
+        {
+            const string s = "goosfraba";
+            const string another = "gOOsfrABa";
+
+            bool equalsWithSimilar = s.Equals(another, StringComparison.InvariantCultureIgnoreCase);
 
             Assert.IsTrue(equalsWithSimilar);
         }
