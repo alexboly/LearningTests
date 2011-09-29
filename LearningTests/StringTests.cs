@@ -272,57 +272,81 @@ namespace LearningTests
         }
 
         [Test]
-        public void EqualsWithItself()
+        [TestCase(StringComparison.CurrentCulture)]
+        [TestCase(StringComparison.CurrentCultureIgnoreCase)]
+        [TestCase(StringComparison.InvariantCulture)]
+        [TestCase(StringComparison.InvariantCultureIgnoreCase)]
+        [TestCase(StringComparison.Ordinal)]
+        [TestCase(StringComparison.OrdinalIgnoreCase)]
+        public void EqualsWithItself(StringComparison comparisonType)
         {
-            const string s = "goosfraba";
+            const string s = "goosfrab";
 
-            bool equalsWithItself = s.Equals(s);
+            bool equalsWithItself = s.Equals(s, comparisonType);
 
             Assert.IsTrue(equalsWithItself);
         }
     
         [Test]
-        public void EqualsWithSameValueDifferentInstance()
+        [TestCase(StringComparison.CurrentCulture)]
+        [TestCase(StringComparison.CurrentCultureIgnoreCase)]
+        [TestCase(StringComparison.InvariantCulture)]
+        [TestCase(StringComparison.InvariantCultureIgnoreCase)]
+        [TestCase(StringComparison.Ordinal)]
+        [TestCase(StringComparison.OrdinalIgnoreCase)]
+        public void EqualsWithSameValueDifferentInstance(StringComparison comparisonType)
         {
             const string s = "goosfraba";
             const string another = "goosfraba";
 
-            bool equalsWithAnother = s.Equals(another);
+            bool equalsWithAnother = s.Equals(another, comparisonType);
 
             Assert.IsTrue(equalsWithAnother);
         }
         
         [Test]
-        public void DoesntEqualWithDifferent()
+        [TestCase(StringComparison.CurrentCulture)]
+        [TestCase(StringComparison.CurrentCultureIgnoreCase)]
+        [TestCase(StringComparison.InvariantCulture)]
+        [TestCase(StringComparison.InvariantCultureIgnoreCase)]
+        [TestCase(StringComparison.Ordinal)]
+        [TestCase(StringComparison.OrdinalIgnoreCase)]
+        public void DoesntEqualWithDifferent(StringComparison comparisonType)
         {
             const string s = "goosfraba";
             const string another = "goosfrabb";
 
-            bool equalsWithDifferent = s.Equals(another);
+            bool equalsWithDifferent = s.Equals(another, comparisonType);
 
             Assert.IsFalse(equalsWithDifferent);
         }
 
         [Test]
-        public void EqualsWithSimilarCurrentCultureIgnoreCase()
+        [TestCase(StringComparison.CurrentCultureIgnoreCase)]
+        [TestCase(StringComparison.InvariantCultureIgnoreCase)]
+        [TestCase(StringComparison.OrdinalIgnoreCase)]
+        public void EqualsWithSimilarIgnoreCase(StringComparison comparisonType)
         {
             const string s = "goosfraba";
             const string another = "gOOsfrABa";
 
-            bool equalsWithSimilar = s.Equals(another, StringComparison.CurrentCultureIgnoreCase);
+            bool equalsWithSimilar = s.Equals(another, comparisonType);
 
             Assert.IsTrue(equalsWithSimilar);
         }
 
         [Test]
-        public void EqualsWithSimilarInvariantCultureIgnoreCase()
+        [TestCase(StringComparison.CurrentCulture)]
+        [TestCase(StringComparison.InvariantCulture)]
+        [TestCase(StringComparison.Ordinal)]
+        public void DifferentFromSimilarDontIgnoreCase(StringComparison comparisonType)
         {
             const string s = "goosfraba";
             const string another = "gOOsfrABa";
 
-            bool equalsWithSimilar = s.Equals(another, StringComparison.InvariantCultureIgnoreCase);
+            bool equalsWithSimilar = s.Equals(another, comparisonType);
 
-            Assert.IsTrue(equalsWithSimilar);
+            Assert.IsFalse(equalsWithSimilar);
         }
     }
 }
