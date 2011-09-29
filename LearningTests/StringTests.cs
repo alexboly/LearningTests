@@ -32,7 +32,7 @@ namespace LearningTests
         }
 
         [Test]
-        public void StringConstructorWithRepeatedCharacter()
+        public void ConstructFromRepeatedCharacter()
         {
             String s = new String('a', 10);
 
@@ -40,7 +40,7 @@ namespace LearningTests
         }
 
         [Test]
-        public void StringConstructorWithCharArray()
+        public void ConstructFromCharArray()
         {
             char[] characters = new[] { 'a', 'b', 'c', 'd', 'e' };
             String s = new String(characters);
@@ -49,7 +49,7 @@ namespace LearningTests
         }
 
         [Test]
-        public void StringConstructorWithPartsOfCharArray()
+        public void ConstructFromPartsOfCharArray()
         {
             char[] characters = new[] { 'a', 'b', 'c', 'd', 'e' };
             String s = new String(characters, 2, 2);
@@ -58,7 +58,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromCharPointer()
+        public unsafe void ConstructFromCharPointer()
         {
             char[] characters = new[] { 'a', 'b', 'c', 'd', 'e', '\0' };
 
@@ -71,7 +71,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromPartOfCharPointer()
+        public unsafe void ConstructFromPartOfCharPointer()
         {
             char[] characters = new[] { 'a', 'b', 'c', 'd', 'e', '\0' };
 
@@ -84,7 +84,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromSbytePointer()
+        public unsafe void ConstructFromSbytePointer()
         {
             fixed(sbyte* pbyte = &asciiBytes[0])
             {
@@ -95,7 +95,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromPartOfSbytePointer()
+        public unsafe void ConstructFromPartOfSbytePointer()
         {
             fixed (sbyte* pbyte = &asciiBytes[0])
             {
@@ -106,7 +106,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromPartOfSbytePointerWithASCIIEncoding()
+        public unsafe void ConstructFromPartOfSbytePointerWithASCIIEncoding()
         {
             fixed (sbyte* pbyte = &asciiBytes[0])
             {
@@ -117,7 +117,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromPartOfSbytePointerWithUtf8Encoding()
+        public unsafe void ConstructFromPartOfSbytePointerWithUtf8Encoding()
         {
             fixed (sbyte* pbyte = &asciiBytes[0])
             {
@@ -128,7 +128,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromPartOfSbytePointerWithUnicodeEncoding()
+        public unsafe void ConstructFromPartOfSbytePointerWithUnicodeEncoding()
         {
             sbyte[] unicodeBytes = new[] { asciiA, zero, asciiB, zero, asciiC, zero, asciiD, zero, asciiE, zero, zero, zero };
 
@@ -141,7 +141,7 @@ namespace LearningTests
         }
 
         [Test]
-        public unsafe void StringConstructorFromPartOfSbytePointerWithBigEndianUnicodeEncoding()
+        public unsafe void ConstructFromPartOfSbytePointerWithBigEndianUnicodeEncoding()
         {
             sbyte[] unicodeBytes = new[] { zero, asciiA, zero, asciiB, zero, asciiC, zero, asciiD, zero, asciiE, zero, zero };
 
