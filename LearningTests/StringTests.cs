@@ -198,5 +198,16 @@ namespace LearningTests
 
             Assert.AreEqual(1, comparison);
         }
+
+        [Test]
+        public void CompareWithNext()
+        {
+            const string s = "goosfraba";
+
+            int comparison = s.CompareTo("goosfrabb");
+
+            Assert.AreEqual(-1, comparison);
+        }
+
     }
 }
