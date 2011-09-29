@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using NUnit.Framework;
 using System.Text;
 
@@ -348,5 +349,17 @@ namespace LearningTests
 
             Assert.IsFalse(equalsWithSimilar);
         }
+
+        [Test]
+        public void ReturnsEnumerator()
+        {
+            const string s = "goosfraba";
+
+            IEnumerator enumerator = s.GetEnumerator();
+            enumerator.MoveNext();
+
+            Assert.AreEqual('g', enumerator.Current);
+        }
+
     }
 }
