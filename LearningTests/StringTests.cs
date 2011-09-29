@@ -291,5 +291,16 @@ namespace LearningTests
 
             Assert.IsTrue(equalsWithAnother);
         }
+        
+        [Test]
+        public void DoesntEqualWithDifferent()
+        {
+            const string s = "goosfraba";
+            const string another = "goosfrabb";
+
+            bool equalsWithDifferent = s.Equals(another);
+
+            Assert.IsFalse(equalsWithDifferent);
+        }
     }
 }
