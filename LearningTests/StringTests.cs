@@ -270,5 +270,15 @@ namespace LearningTests
 
             Assert.IsFalse(doesntEndsWithfrabb);
         }
+
+        [Test]
+        public void EqualsWithItself()
+        {
+            const string s = "goosfraba";
+
+            bool equalsWithItself = s.Equals(s);
+
+            Assert.IsTrue(equalsWithItself);
+        }
     }
 }
