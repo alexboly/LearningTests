@@ -163,11 +163,20 @@ namespace LearningTests
 
         [Test]
         [ExpectedException( ExpectedException = typeof(IndexOutOfRangeException), ExpectedMessage = "Index was outside the bounds of the array.")]
-        public void IndexerThrowsExceptionWhenOutOfBounds()
+        public void IndexerThrowsExceptionWhenOutOfLowerBound()
         {
             const string s = "boosfraba";
 
             char shouldThrowException = s[-1];
+        }
+
+        [Test]
+        [ExpectedException(ExpectedException = typeof(IndexOutOfRangeException), ExpectedMessage = "Index was outside the bounds of the array.")]
+        public void IndexerThrowsExceptionWhenOutOfUpperBound()
+        {
+            const string s = "boosfraba";
+
+            char shouldThrowException = s[100];
         }
     }
 }
