@@ -156,7 +156,7 @@ namespace LearningTests
         [Test]
         public void IndexerReturnsTheRightValue()
         {
-            const string s = "boosfraba";
+            const string s = "goosfraba";
 
             Assert.AreEqual('a', s[6]);
         }
@@ -165,7 +165,7 @@ namespace LearningTests
         [ExpectedException( ExpectedException = typeof(IndexOutOfRangeException), ExpectedMessage = "Index was outside the bounds of the array.")]
         public void IndexerThrowsExceptionWhenOutOfLowerBound()
         {
-            const string s = "boosfraba";
+            const string s = "goosfraba";
 
             char shouldThrowException = s[-1];
         }
@@ -174,7 +174,7 @@ namespace LearningTests
         [ExpectedException(ExpectedException = typeof(IndexOutOfRangeException), ExpectedMessage = "Index was outside the bounds of the array.")]
         public void IndexerThrowsExceptionWhenOutOfUpperBound()
         {
-            const string s = "boosfraba";
+            const string s = "goosfraba";
 
             char shouldThrowException = s[100];
         }
@@ -182,12 +182,21 @@ namespace LearningTests
         [Test]
         public void ClonesTheString()
         {
-            const string s = "boosfraba";
+            const string s = "goosfraba";
 
             string clone = s.Clone() as string;
 
             Assert.AreSame(s, clone);
         }
 
+        [Test]
+        public void CompareWithPrevious()
+        {
+            const string s = "goosfraba";
+
+            int comparison = s.CompareTo("a");
+
+            Assert.AreEqual(1, comparison);
+        }
     }
 }
