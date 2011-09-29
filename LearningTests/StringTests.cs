@@ -260,6 +260,15 @@ namespace LearningTests
 
             Assert.IsTrue(endsWithaba);
         }
+        
+        [Test]
+        public void DoesntEndWith()
+        {
+            const string s = "goosfraba";
 
+            bool doesntEndsWithfrabb = s.EndsWith("frabb");
+
+            Assert.IsFalse(doesntEndsWithfrabb);
+        }
     }
 }
