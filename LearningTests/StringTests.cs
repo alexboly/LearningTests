@@ -218,5 +218,16 @@ namespace LearningTests
 
             Assert.AreEqual(0, comparison);
         }
+
+        [Test]
+        public void ContainsString()
+        {
+            const string s = "goosfraba";
+
+            bool contains = s.Contains("oosfr");
+
+            Assert.IsTrue(contains);
+        }
+
     }
 }
