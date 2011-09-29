@@ -178,5 +178,16 @@ namespace LearningTests
 
             char shouldThrowException = s[100];
         }
+
+        [Test]
+        public void ClonesTheString()
+        {
+            const string s = "boosfraba";
+
+            string clone = s.Clone() as string;
+
+            Assert.AreSame(s, clone);
+        }
+
     }
 }
