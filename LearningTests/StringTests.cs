@@ -372,6 +372,34 @@ namespace LearningTests
             Assert.AreEqual(valueReturnedByTheInitialRunOn32BitsNoIdeaHowToComputeIt, hash);
         }
 
+        [Test]
+        public void TypeIsString()
+        {
+            const string s = "goosfraba";
 
+            Type t = s.GetType();
+
+            Assert.AreEqual(typeof(string), t);
+        }
+
+        [Test]
+        public void TypeCodeIsString()
+        {
+            const string s = "goosfraba";
+
+            TypeCode typeCode = s.GetTypeCode();
+
+            Assert.AreEqual(TypeCode.String, typeCode);
+        }
+
+        [Test]
+        public void IndexOf()
+        {
+            const string s = "goosfraba";
+
+            int indexOf = s.IndexOf('o');
+
+            Assert.AreEqual(1, indexOf);
+        }
     }
 }
