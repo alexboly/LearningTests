@@ -228,6 +228,15 @@ namespace LearningTests
 
             Assert.IsTrue(contains);
         }
+        
+        [Test]
+        public void DoesntContainString()
+        {
+            const string s = "goosfraba";
 
+            bool contains = s.Contains("oosfs");
+
+            Assert.IsFalse(contains);
+        }
     }
 }
