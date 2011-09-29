@@ -238,5 +238,17 @@ namespace LearningTests
 
             Assert.IsFalse(contains);
         }
+
+        [Test]
+        public void CopiesTheRightCharacters()
+        {
+            const string s = "goosfraba";
+            char[] destination = new[]{'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'};
+            char[] expected = new[] { 'a', 'a', 'o', 's', 'a', 'a', 'a', 'a' };
+
+            s.CopyTo(2, destination, 2, 2);
+
+            Assert.AreEqual(expected, destination);
+        }
     }
 }
