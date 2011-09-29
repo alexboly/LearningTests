@@ -160,5 +160,14 @@ namespace LearningTests
 
             Assert.AreEqual('a', s[6]);
         }
+
+        [Test]
+        [ExpectedException( ExpectedException = typeof(IndexOutOfRangeException), ExpectedMessage = "Index was outside the bounds of the array.")]
+        public void IndexerThrowsExceptionWhenOutOfBounds()
+        {
+            const string s = "boosfraba";
+
+            char shouldThrowException = s[-1];
+        }
     }
 }
