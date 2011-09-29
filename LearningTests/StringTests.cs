@@ -208,6 +208,15 @@ namespace LearningTests
 
             Assert.AreEqual(-1, comparison);
         }
+        
+        [Test]
+        public void CompareWithEqual()
+        {
+            const string s = "goosfraba";
 
+            int comparison = s.CompareTo("goosfraba");
+
+            Assert.AreEqual(0, comparison);
+        }
     }
 }
