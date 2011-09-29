@@ -152,5 +152,13 @@ namespace LearningTests
                 Assert.AreEqual("CD", s);
             }
         }
+
+        [Test]
+        public void IndexerReturnsTheRightValue()
+        {
+            const string s = "boosfraba";
+
+            Assert.AreEqual('a', s[6]);
+        }
     }
 }
