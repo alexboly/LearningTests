@@ -250,5 +250,16 @@ namespace LearningTests
 
             Assert.AreEqual(expected, destination);
         }
+
+        [Test]
+        public void EndsWith()
+        {
+            const string s = "goosfraba";
+
+            bool endsWithA = s.EndsWith("a");
+
+            Assert.IsTrue(endsWithA);
+        }
+
     }
 }
