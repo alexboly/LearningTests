@@ -282,7 +282,7 @@ namespace LearningTests
         }
     
         [Test]
-        public void EqualsWithAnother()
+        public void EqualsWithSameValueDifferentInstance()
         {
             const string s = "goosfraba";
             const string another = "goosfraba";
@@ -301,6 +301,17 @@ namespace LearningTests
             bool equalsWithDifferent = s.Equals(another);
 
             Assert.IsFalse(equalsWithDifferent);
+        }
+
+        [Test]
+        public void EqualsWithSimilarIgnoreCase()
+        {
+            const string s = "goosfraba";
+            const string another = "gOOsfrABa";
+
+            bool equalsWithSimilar = s.Equals(another, StringComparison.CurrentCultureIgnoreCase);
+
+            Assert.IsTrue(equalsWithSimilar);
         }
     }
 }
