@@ -361,5 +361,17 @@ namespace LearningTests
             Assert.AreEqual('g', enumerator.Current);
         }
 
+        [Test]
+        public void HashCode()
+        {
+            const string s = "abcde";
+            const int valueReturnedByTheInitialRunOn32BitsNoIdeaHowToComputeIt = 398757997;
+
+            int hash = s.GetHashCode();
+
+            Assert.AreEqual(valueReturnedByTheInitialRunOn32BitsNoIdeaHowToComputeIt, hash);
+        }
+
+
     }
 }
