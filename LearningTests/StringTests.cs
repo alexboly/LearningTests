@@ -280,5 +280,16 @@ namespace LearningTests
 
             Assert.IsTrue(equalsWithItself);
         }
+    
+        [Test]
+        public void EqualsWithAnother()
+        {
+            const string s = "goosfraba";
+            const string another = "goosfraba";
+
+            bool equalsWithAnother = s.Equals(another);
+
+            Assert.IsTrue(equalsWithAnother);
+        }
     }
 }
