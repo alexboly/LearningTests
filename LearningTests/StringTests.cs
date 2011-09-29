@@ -130,11 +130,11 @@ namespace LearningTests
         [Test]
         public unsafe void StringConstructorFromPartOfSbytePointerWithUnicodeEncoding()
         {
-            sbyte[] unicodeBytes = new[] { zero, asciiA, zero, asciiB, zero, asciiC, zero, asciiD, zero, asciiE, zero, zero };
+            sbyte[] unicodeBytes = new[] { asciiA, zero, asciiB, zero, asciiC, zero, asciiD, zero, asciiE, zero, zero, zero };
 
             fixed (sbyte* pbyte = &unicodeBytes[0])
             {
-                String s = new string(pbyte, 5, 4, Encoding.Unicode);
+                String s = new string(pbyte, 4, 4, Encoding.Unicode);
 
                 Assert.AreEqual("CD", s);
             }
